@@ -10,7 +10,7 @@
             margin: 0px 8px;
             list-style-type: disc;
             font-size: 12px;
-            line-height: 1px;
+            line-height: 1rem;
             text-align: left;
             color: #595959;
             padding-inline-start: 25px;
@@ -74,8 +74,8 @@
             }
         }
         
-        //let text = "<ul>";
-        obj.forEach(myFunction);
+        let text = "";
+        obj.skills.good.forEach(myFunction);
         //text += "</ul>";
         document.getElementById("demo").innerHTML = text;
 

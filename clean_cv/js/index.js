@@ -194,84 +194,167 @@ const origobj = {
     "CS BMR Innovation Circle & Co-Project lead for Python & R process automation (2018)"
   ]
 }
+
+const education_obj = {
+  "education": [
+    {
+      "institution": "FernUniversität Hagen",
+      "area": "Applied Computer Science",
+      "studyType": "Master of Science",
+      "education-time": "2022-2025 (approx.)",
+      "details": {},
+      "topics": [
+        "Architecture and Implementation of Databases",
+        "Parallel Programming",
+        "Data Engineering for Data Science"
+      ]
+    },
+    {
+      "institution": "International School of Management Dortmund",
+      "area": "Finance",
+      "studyType": "Master of Science",
+      "education-time": "09/14-12/16",
+      "details": {
+        "grade": "Excellent with 1.39",
+        "semesterabroad": {
+          "institution": "Oxford Brookes University, Oxford",
+          "grade": "Excellent with 1.0",
+          "education-time": "09/15-12/15"
+        }
+      },
+      "topics": ["Portfolio Modelling (C# based)", "Asset Management"]
+    } 
+  ]
+}
+//console.log(getDepth(education_obj.education[1]))
+
+const testobjkurz = {"projects_clubs": "test"}
+//1: 
+
+const testobj2 = {"projects_clubs": [
+  "CS Group Finance Innovation Circle (2018-2020)",
+  "CS Valuation in Resolution Data Sourcing (2019)",
+  "CS BMR Innovation Circle & Co-Project lead for Python & R process automation (2018)"
+]}
+//2
+
+const testobj3 = {
+  "references": [
+    {
+      "name": "Dorothee Bill",
+      "company": "Credit Suisse",
+      "relationship": "Former manager",
+      "title": "Head of IRB Swiss Bank",
+      "department": "Quantitative Analysis and Technology",
+      "contact": "0123456789"
+    },
+    {
+      "name": "Dr. Massimo Cutaia",
+      "company": "Credit Suisse",
+      "relationship": "Hiring manager",
+      "title": "Global Head of Core Credit Modelling",
+      "department": "Quantitative Analysis and Technology",
+      "contact": "0123456789"
+    },
+    {
+      "name": "Dr. Massimo Cutaia2",
+      "company": "Credit Suisse",
+      "relationship": "Hiring manager",
+      "title": "Global Head of Core Credit Modelling",
+      "department": "Quantitative Analysis and Technology",
+      "contact": "0123456789"
+    }
+  ]}
+//3
+const testobj4 = {
+  "references": [
+    {
+      "name": "Dorothee Bill",
+      "title": "Head of IRB Swiss Bank",
+      "relationship": "Former manager",
+      "department": "QAT",
+      "contact": "0123456789",
+      "topics": ["Portfolio Modelling (C# based)", "Asset Management"]
+    },
+    {
+      "name": "Dr. Massimo Cutaia",
+      "title": "Global Head of Core Credit Modelling",
+      "relationship": "Hiring manager",
+      "department": "QAT",
+      "contact": "0123456789",
+      "topics": ["oink", "barg"]
+    }
+  ]}
+//4
+//console.log(getDepth(testobj3.references))
+
+
 const testobj = {"projects_clubs": [
   "CS Group Finance Innovation Circle (2018-2020)",
   "CS Valuation in Resolution Data Sourcing (2019)",
   "CS BMR Innovation Circle & Co-Project lead for Python & R process automation (2018)"
 ]}
-const obj = origobj;
-/*var ch = Object.keys(obj["projects_clubs"][0]);
-var ch = (typeof testobj["projects_clubs"][0] );
-var ch = (typeof obj["references"][0] );
-var ch = Array.isArray(obj["summarybanner"]);
-var ch = (typeof obj["references"][0] );
-var ch = (typeof obj["projects_clubs"][0] );
-
-var datakeys = Object.keys(obj);*/
-//console.log(datakeys[2]);
 
 
-function getDepth(obj){
-  if(!obj || obj.length===0 || typeof(obj)!=="object") return 0;
-  const keys = Object.keys(obj);
-  let depth = 0;
-  keys.forEach(key=>{
-      let tmpDepth = getDepth(obj[key]);
-      if(tmpDepth>depth){
-          depth = tmpDepth;
+//var datakeys = Object.keys(testobj);
+
+var listItem = "";
+var listHTML = "";
+//console.log(getDepth(education_obj.education[1]))
+console.log(nestedLoop(testobj4));
+
+function nestedLoop(obj) {
+  const res = {};
+  var parentkey = [];
+  //var datakeys = Object.keys(obj);
+  function recurse(obj, current) {
+      for (const key in obj) {
+          let value = obj[key];
+          //let i = 0;
+          if(value != undefined) {
+              if (value && typeof value === 'object') {
+                if (Array.isArray(value) && typeof value[0] === 'string') {
+                  //console.log(key.toString() + '_' +  value);
+                  
+                  iterateList(value, key);
+                  console.log(key.toString() + listHTML);
+                } else {
+                  if(key.toString().length == 1 && Number.parseInt(key) > 0) {
+                    
+                    console.log("pop");
+                    parentkey.pop();
+                    parentkey.push(key.toString());
+                    console.log(parentkey);
+                  } else {
+                    console.log("push only");
+                    parentkey.push(key.toString());
+                    console.log(parentkey);
+                  }
+                //console.log(key);
+                console.log('typeof value[0]: ' + typeof value[0] +' ... typeof value: ' + typeof value + ' .... ' + value);
+                console.log('typeof key[0]: ' + typeof key[0] +' ... typeof key: ' + typeof key + ' .... ' + key);
+                }
+                  recurse(value, key);
+                  
+              } else if (key.toString().length > 1 && typeof key === 'string' && value && typeof value === 'string') {
+                  // Do your stuff here to var value
+                  console.log(parentkey.join('_') +  '_'  + key + ': ' + value);
+                  //var parentkey = [];
+              } else {
+                res[key] = value;
+                console.log("else");
+              }
+          }
       }
-  })
-  return depth+1;
-}
-
-
-function getKeys(obj){
-  var objkeys = Object.keys(obj);
-  return objkeys;
-}
-
-
-
-/*
-var datakeys = Object.keys(testobj);
-let text = "";
-let x = testobj[datakeys[0]];
-let txt = [];
-if(typeof x[0] === "string") {
-x.forEach(myFunction);
-}
-text += txt;
-let check = "demo";
-
-console.log(text);
-function myFunction(value) {
-  txt += "<li>" + value + "</li>";
-} 
-*/
-let listItem = "";
-var datakeys = Object.keys(testobj);
-
-for (var i = 0; i < datakeys.length; i++) {
-  if (Array.isArray(obj[datakeys[i]])) {
-    if(typeof obj[datakeys[i]][0] === "string") {
-      iterateList(obj,datakeys[i]);
-    } else if (typeof obj[datakeys[i]][0] === "object") {
-      var datakeyslower = Object.keys(testobj);
-
-      /*let objarr = obj[datakeys[i]];
-      let listHTML = "";
-      objarr.forEach(createHTMLList);
-      listHTML += listItem;
-      console.log(listHTML);*/
-      //document.getElementById(datakeys[i]).innerHTML = listHTML;
-    } 
   }
-  // make your new row with the data
+  recurse(obj);
+  return res;
 }
 
 function iterateList(object, arrayname) {
-  let objarr = object[arrayname];
-  let listHTML = "";
+  let objarr = object;
+  listHTML = '';
+  listItem = '';
   objarr.forEach(createHTMLList);
   listHTML += listItem;
   console.log(listHTML);
@@ -281,27 +364,3 @@ function iterateList(object, arrayname) {
 function createHTMLList(value) {
   listItem += "<li>" + value + "</li>";
 } 
-/*
-console.log(getDepth(obj.personalscontainer));
-/*
- var datakeys = Object.keys(obj);
-for (var i = 0; i < datakeys.length; i++) {
-  if (Array.isArray(obj[datakeys[i]])
-    x += (obj[datakeys[i]]
-  // make your new row with the data
-}
-/*
- var datakeys = Object.keys(obj);
- var datakeys2 = Object.getOwnPropertyNames(obj);
- let x = "";
-console.log(datakeys);
-console.log(datakeys2);
-for (var i = 0; i < datakeys.length; i++) {
-  x += obj[datakeys[i]]
-  // make your new row with the data
-}
-console.log(x);
-
-console.log(Object.keys(obj.skills));
-var datakeys = Object.keys(obj.skills);
-console.log(datakeys);  */

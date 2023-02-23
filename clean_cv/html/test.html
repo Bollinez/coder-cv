@@ -19,7 +19,7 @@
 </script> -->
 </head>
 <p id="native"></p>
- <script src="index.js"></script>
+ <script src="../js/index.js"></script>
  <script>
     $(document).ready(function () {
         $.getJSON('cv_content.json', function (data) {
@@ -41,7 +41,7 @@
 <p class="skilly"></p>
 <script>
     $(document).ready(function () {
-        $.getJSON('cv_content.json', function (data) {
+        $.getJSON('../json/cv_content.json', function (data) {
             var items = [];
             $.each(data.skills, function (key, val) {
                 items.push( "<li id='" + key + "'>" + val + "</li>" );
