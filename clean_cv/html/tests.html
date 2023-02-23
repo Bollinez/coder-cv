@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>JavaScript Arrays</h2>
+
+    <style>
+        ul.workxp-description {
+            margin: 0px 8px;
+            list-style-type: disc;
+            font-size: 12px;
+            line-height: 1px;
+            text-align: left;
+            color: #595959;
+            padding-inline-start: 25px;
+        }
+    </style>
+
+    <ul class="workxp-description">
+    <p id="demo"></p>
+    </ul>
+    <script>
+
+        const obj = {
+            "personals": {
+                "name": "Bolli",
+                "summary": "I am Bolli"
+            },
+            "workxp-list": [
+                {
+                    "department": "(Quantitative Analysis and Technology – Credit Suisse AG, Zurich)",
+                    "position": "Senior Quantitative Analyst",
+                    "startDate": "02/23",
+                    "endDate": "present",
+                    "maintasks": [
+                        "development and maintenance of credit risk models using advanced statistical methods, including machine learning models such as gradient boosting or lasso regression in R",
+                        "application of standards for code versioning and documentation, as well as issue management using git and Odyssey Bitbucket",
+                        "project plan and workflow management using Jira and Kanban",
+                        "development of a model prototype using Fsharp and Angular as a proof of concept to move from a waterfall delivery model to a continuous integration and continuous delivery (CI/CD) practice",
+                        "automation of the economic downturn analysis for internal-rating-based (IRB) modelling using R Markdown, including: placeholdersubtasks"
+                    ],
+                    "subtasks": [
+                        "collection, processing and aggregation of macroeconomic data from external sources using R and PL/SQL",
+                        "application of regulatory standards for the estimation of economic downturns on portfolio-level"
+                    ]
+                },
+                {
+                    "department": "(Quantitative Analysis and Technology – Credit Suisse AG, Zurich)",
+                    "position": "Senior Model Developer",
+                    "startDate": "08/20",
+                    "endDate": "02/23",
+                    "maintasks": [
+                        "development and implementation of processes for the monitoring and backtesting of credit risk models using R and Python",
+                        "automation of report production for senior management and Swiss Financial Market Supervisory Authority (FINMA) using Python"
+                    ],
+                    "subtasks": []
+                }
+            ],
+
+            "skills": {
+                "verygood": ["PL/SQL", "R", "Markdown", "git", "Python", "VBA", "JSON"],
+                "good": ["FSharp", "SAS", "Anaconda", "Kanban", "HTML", "CSS"],
+                "fundamentals": [
+                    "Java",
+                    "jQuery",
+                    "JavaScript",
+                    "Azure",
+                    "C#",
+                    "Docker",
+                    "Angular",
+                    "Tableau"
+                ]
+            }
+        }
+        
+        //let text = "<ul>";
+        obj.forEach(myFunction);
+        //text += "</ul>";
+        document.getElementById("demo").innerHTML = text;
+
+        function myFunction(value) {
+        text += "<li>" + value + "</li>";
+        } 
+    </script>
+
+</body>
+
+</html>

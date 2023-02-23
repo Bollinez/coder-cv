@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>CV Sydney Hillen</title>
+
+    <script src="index.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.getJSON('cv_content.json', function (data) {
+                $.each(data.personals, function (key, val) {
+                    $(`#${key}`).html(val)
+                });
+            });
+        });
+    </script>
+   <!--  <script>$(document).ready(function () {
+            $("p:contains(' R'),p:contains(' Python')").css("color", 'red');
+        });
+    </script>
+    <script>$(document).ready(function () {
+            $("li:contains(' R')").css("color", 'red');
+        });
+    </script>
+    <script>
+$(document).ready(function() {
+  var highlight1 = 'Python';
+  var highlight2 = 'R';
+  var mytext = 'sadf ble blasadlf bla';
+  mytext = mytext.replace(new RegExp(find, "g"), '<span style="color:yellow;">' + find + '</span>');
+  mytext = mytext.replace(new RegExp(find2, "g"), '<span style="color:red;">' + find2 + '</span>');
+  $("#output").html(mytext);
+})
+
+    </script>
+    <script>
+
+$(document).ready(function () {
+    $("#here").on("keydown keyup", function () {
+        var mytext = $(this).val();
+        var find = $("#find").val();
+        mytext=mytext.replace(new RegExp(find,"g"), "<span class='me'>"+find+"</span>");
+        $("#output").html(mytext);
+
+    });
+})
+</script> -->
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link rel="stylesheet" href="./design/shps.css">
+    <link rel="stylesheet" href="./design/web/hack.css">
+
+</head>
+<page size="A4">
+
+    <!-- <body class="cv-bg-light-grey" contenteditable="false"> -->
+
+    <!-- Page Container 
+    <div class="cv-content cv-margin-top" style="max-width:1400px;">-->
+
+    <div class="rowidbanner">
+        <h6>1</h6>
+        <h6>2</h6>
+        <h6>3</h6>
+        <h6>4</h6>
+        <h6>5</h6>
+        <h6>6</h6>
+        <h6>7</h6>
+        <h6>8</h6>
+        <h6>9</h6>
+        <h6>10</h6>
+        <h6>11</h6>
+        <h6>12</h6>
+        <h6>13</h6>
+        <h6>14</h6>
+        <h6>15</h6>
+        <h6>16</h6>
+        <h6>17</h6>
+        <h6>18</h6>
+        <h6>19</h6>
+        <h6>20</h6>
+        <h6>21</h6>
+        <h6>22</h6>
+        <h6>23</h6>
+        <h6>24</h6>
+        <h6>25</h6>
+        <h6>26</h6>
+        <h6>27</h6>
+        <h6>28</h6>
+        <h6>29</h6>
+        <h6>30</h6>
+        <h6>31</h6>
+        <h6>32</h6>
+        <h6>33</h6>
+        <h6>34</h6>
+        <h6>35</h6>
+        <h6>36</h6>
+        <h6>37</h6>
+        <h6>38</h6>
+        <h6>39</h6>
+        <h6>40</h6>
+        <h6>41</h6>
+        <h6>42</h6>
+        <h6>43</h6>
+        <h6>44</h6>
+        <h6>45</h6>
+        <h6>46</h6>
+        <h6>47</h6>
+        <h6>48</h6>
+        <h6>49</h6>
+        <h6>50</h6>
+        <h6>51</h6>
+        <h6>52</h6>
+        <h6>53</h6>
+        <h6>54</h6>
+        <h6>55</h6>
+        <h6>56</h6>
+        <h6>57</h6>
+        <h6>58</h6>
+        <h6>59</h6>
+        <h6>60</h6>
+    </div>
+
+   
+    <div class="summarybanner">
+        <h1>self.name = 'Sydney Hillen'</h1>
+        <p id="demo"></p>
+        <h2>#summary</h2>
+        <p><span id="personals.summary"></span> </p>
+    </div>
+
+    <div class="imgcontainer">
+        <img src="./img/cv_img.jpg" style="width:100%" alt="Hillen">
+    </div>
+
+    <div class="personalscontainer">
+        <personaldetail>address: Obere Belchenstr 17, 5012 Schoenenwerd</personaldetail>
+        <personaldetail>birth: 1990-07-29</personaldetail>
+        <personaldetail>status: married</personaldetail>
+        <personaldetail>mobile: +41 76 565 3714</personaldetail>
+        <personaldetail>mail: sydney.hillen@outlook.com</personaldetail>
+        <personaldetail>linkedin: /sydney-hillen</personaldetail>
+    </div>
+    <div class="workxp-container">
+        <h2>#work experience</h2>
+        <p>(Quantitative Analysis and Technology – Credit Suisse AG, Zurich)</p>
+        <div class="workxp-grid-single">
+            <div class="workxp-title">Senior Quantitative Analyst</div>
+            <div class="workxp-time">02/23-present</div>
+        </div>
+        <ul class="workxp-description">
+            <li>development and maintenance of credit risk models using advanced statistical methods, including machine
+                learning models such as gradient boosting or lasso regression in R</li>
+        </ul>
+    </div>
+
+    <div class="skillscontainer">
+        <h2>#relevant skills</h2>
+
+    </div>
+</page>
+</html>
