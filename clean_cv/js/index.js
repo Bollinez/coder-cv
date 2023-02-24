@@ -202,7 +202,7 @@ const education_obj = {
       "area": "Applied Computer Science",
       "studyType": "Master of Science",
       "education-time": "2022-2025 (approx.)",
-      "details": {},
+      //"details": {},
       "topics": [
         "Architecture and Implementation of Databases",
         "Parallel Programming",
@@ -223,6 +223,21 @@ const education_obj = {
         }
       },
       "topics": ["Portfolio Modelling (C# based)", "Asset Management"]
+    },
+    {
+      "institution": "International School of Management Dortmund",
+      "area": "International Management",
+      "studyType": "Bachelor of Arts",
+      "education-time": "09/10-08/14",
+      "details": {
+        "grade": "Good with 2.1",
+        "semesterabroad": {
+          "institution": "European Business School, Dublin",
+          "grade": "Excellent with 1.0",
+          "education-time": "01/12-04/12"
+        }
+      },
+      "topics": ["Project Management", "Finance"]
     } 
   ]
 }
@@ -301,54 +316,108 @@ const testobj = {"projects_clubs": [
 var listItem = "";
 var listHTML = "";
 //console.log(getDepth(education_obj.education[1]))
-console.log(nestedLoop(testobj4));
+console.log(nestedLoop(education_obj));
 
 function nestedLoop(obj) {
   const res = {};
   var parentkey = [];
+  var newdepth = 0;
+  var depthobj  = 0;
+  var delta = 0;
+  var datakeys = Object.keys(obj);
+  if(Array.isArray(obj[datakeys[0]])) {var countParentObj = obj[datakeys[0]].length} else {var countObj = -1};
   //var datakeys = Object.keys(obj);
   function recurse(obj, current) {
+    
+    //newdepth = getDepth(obj[datakeys[0]]);
+    
+    //console.log('depth ' + newdepth);
       for (const key in obj) {
+       // if(Array.isArray(obj[key]) && typeof obj[key][0] === 'object') {var countObj = obj[key].length - 1} else {var countObj = -1};
+
           let value = obj[key];
           //let i = 0;
           if(value != undefined) {
               if (value && typeof value === 'object') {
-                if (Array.isArray(value) && typeof value[0] === 'string') {
+                if (Array.isArray(value) && typeof value[0] === 'string' && value.length > 0) {
                   //console.log(key.toString() + '_' +  value);
-                  
+
                   iterateList(value, key);
                   console.log(key.toString() + listHTML);
-                } else {
+               // } else if (Array.isArray(value) && typeof value[0] === 'object') {
+
+                
+                } else if (Object.keys(value).length > 0) {
                   if(key.toString().length == 1 && Number.parseInt(key) > 0) {
                     
-                    console.log("pop");
-                    parentkey.pop();
+                if(newdepth == 0) {depthobj = getDepth(value);} else {depthobj = newdepth;}
+                newdepth = getDepth(value);
+                delta = Math.max(0,newdepth - depthobj + 1);
+          console.log('_______');
+          console.log('depth ' + newdepth);
+          console.log('olddepth ' + depthobj);
+          console.log(parentkey);
+          for (let i = 0; i < delta; i++) {
+            
+            console.log("pop");
+            parentkey.pop();
+          }
+                    //console.log("pop");
+                    //parentkey.pop();
+                    console.log(parentkey);
+                    console.log("push");
                     parentkey.push(key.toString());
                     console.log(parentkey);
+                    console.log('_______');
                   } else {
+                    
+                if(newdepth == 0) {depthobj = getDepth(value);} else {depthobj = newdepth;}
+                newdepth = getDepth(value);
+                delta = Math.max(0,newdepth - depthobj + 1);
+          console.log('_______');
+          console.log('depth ' + newdepth);
+          console.log('olddepth ' + depthobj);
+          console.log(parentkey);
                     console.log("push only");
                     parentkey.push(key.toString());
                     console.log(parentkey);
+                    console.log('_______');
                   }
                 //console.log(key);
-                console.log('typeof value[0]: ' + typeof value[0] +' ... typeof value: ' + typeof value + ' .... ' + value);
-                console.log('typeof key[0]: ' + typeof key[0] +' ... typeof key: ' + typeof key + ' .... ' + key);
+               // console.log('typeof value[0]: ' + typeof value[0] +' ... typeof value: ' + typeof value + ' .... ' + value);
+               // console.log('typeof key[0]: ' + typeof key[0] +' ... typeof key: ' + typeof key + ' .... ' + key);
                 }
                   recurse(value, key);
                   
               } else if (key.toString().length > 1 && typeof key === 'string' && value && typeof value === 'string') {
                   // Do your stuff here to var value
                   console.log(parentkey.join('_') +  '_'  + key + ': ' + value);
+                  
+                  //console.log('depth ' + depthobj);
                   //var parentkey = [];
               } else {
                 res[key] = value;
-                console.log("else");
+                //console.log("else");
               }
+              
           }
       }
   }
   recurse(obj);
   return res;
+}
+
+function getDepth(obj){
+  if(!obj || obj.length===0 || typeof(obj)!=="object") return 0;
+  const keys = Object.keys(obj);
+  let depth = 0;
+  keys.forEach(key=>{
+      let tmpDepth = getDepth(obj[key]);
+      if(tmpDepth>depth){
+          depth = tmpDepth;
+      }
+  })
+  return depth+1;
 }
 
 function iterateList(object, arrayname) {
@@ -357,7 +426,7 @@ function iterateList(object, arrayname) {
   listItem = '';
   objarr.forEach(createHTMLList);
   listHTML += listItem;
-  console.log(listHTML);
+  //console.log(listHTML);
  // document.getElementById(arrayname).innerHTML = listHTML;
 }
 
