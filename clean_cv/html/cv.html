@@ -6,38 +6,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>CV Sydney Hillen</title>
 
-    <script src="../js/index.js"></script>
-   <!--  <script>$(document).ready(function () {
-            $("p:contains(' R'),p:contains(' Python')").css("color", 'red');
-        });
-    </script>
-    <script>$(document).ready(function () {
-            $("li:contains(' R')").css("color", 'red');
-        });
-    </script>
-    <script>
-$(document).ready(function() {
-  var highlight1 = 'Python';
-  var highlight2 = 'R';
-  var mytext = 'sadf ble blasadlf bla';
-  mytext = mytext.replace(new RegExp(find, "g"), '<span style="color:yellow;">' + find + '</span>');
-  mytext = mytext.replace(new RegExp(find2, "g"), '<span style="color:red;">' + find2 + '</span>');
-  $("#output").html(mytext);
-})
-
-    </script>
-    <script>
-
-$(document).ready(function () {
-    $("#here").on("keydown keyup", function () {
-        var mytext = $(this).val();
-        var find = $("#find").val();
-        mytext=mytext.replace(new RegExp(find,"g"), "<span class='me'>"+find+"</span>");
-        $("#output").html(mytext);
-
-    });
-})
-</script> -->
 
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <link rel="stylesheet" href="../css/shps.css">
@@ -116,10 +84,10 @@ $(document).ready(function () {
 
    
     <div class="summarybanner">
-        <h1>self.name = 'Sydney Hillen'</h1>
+        <pre><h1>self.name = </h1><h1 id = summarybanner-name></h1></pre>
         <p id="demo"></p>
         <h2>#summary</h2>
-        <p><span id="personals.summary"></span> </p>
+        <p id="summarybanner-summary"></p>
     </div>
 
     <div class="imgcontainer">
@@ -136,20 +104,41 @@ $(document).ready(function () {
     </div>
     <div class="workxp-container">
         <h2>#work experience</h2>
-        <p>(Quantitative Analysis and Technology – Credit Suisse AG, Zurich)</p>
+        <h5 id = "workxp-list-0-workxp-department"></h5>
         <div class="workxp-grid-single">
-            <div class="workxp-title">Senior Quantitative Analyst</div>
-            <div class="workxp-time">02/23-present</div>
+            <div class="workxp-title" id = "workxp-list-0-workxp-title"> </div>
+            <div class="workxp-time" id = "workxp-list-0-workxp-time"></div>
         </div>
-        <ul class="workxp-description">
-            <li>development and maintenance of credit risk models using advanced statistical methods, including machine
-                learning models such as gradient boosting or lasso regression in R</li>
-        </ul>
+            <ul class="workxp-description" id = "workxp-list-0-workxp-description"></ul>
+            <ul class="workxp-description-sub" id = "workxp-list-0-workxp-description-sub"></ul>
+            
+
+        <div class="workxp-grid-single">
+            <div class="workxp-title" id = "workxp-list-1-workxp-title"> </div>
+            <div class="workxp-time" id = "workxp-list-1-workxp-time"></div>
+        </div>
+            <ul class="workxp-description" id = "workxp-list-1-workxp-description"></ul>
+
+        <h5 id = "workxp-list-2-workxp-department"></h5>
+        <div class="workxp-grid-single">
+            <div class="workxp-title" id = "workxp-list-2-workxp-title"> </div>
+            <div class="workxp-time" id = "workxp-list-2-workxp-time"></div>
+        </div>
+            <ul class="workxp-description" id = "workxp-list-2-workxp-description"></ul>
+            <ul class="workxp-description-sub" id = "workxp-list-2-workxp-description-sub"></ul>
+            
+        <div class="workxp-grid-single">
+            <div class="workxp-title" id = "workxp-list-3-workxp-title"> </div>
+            <div class="workxp-time" id = "workxp-list-3-workxp-time"></div>
+        </div>
+            <ul class="workxp-description" id = "workxp-list-3-workxp-description"></ul>
     </div>
 
     <div class="skillscontainer">
         <h2>#relevant skills</h2>
 
     </div>
+    
+    <script src="../js/index.js"></script>
 </page>
 </html>

@@ -21,7 +21,7 @@ const cv_obj = {
         "application of standards for code versioning and documentation, as well as issue management using git and Odyssey Bitbucket",
         "project plan and workflow management using Jira and Kanban",
         "development of a model prototype using Fsharp and Angular as a proof of concept to move from a waterfall delivery model to a continuous integration and continuous delivery (CI/CD) practice",
-        "automation of the economic downturn analysis for internal-rating-based (IRB) modelling using R Markdown, including: placeholdersubtasks",
+        "automation of the economic downturn analysis for internal-rating-based (IRB) modelling using R Markdown, including: ",
       ],
       "workxp-description-sub": [
         "collection, processing and aggregation of macroeconomic data from external sources using R and PL/SQL",
