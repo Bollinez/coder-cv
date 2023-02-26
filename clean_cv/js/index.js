@@ -2,7 +2,10 @@ const cv_obj = {
   summarybanner: {
     name: "Sydney Hillen",
     image: "../pycv/img/cv_img.jpg",
-    summary: "A summary of Bolli… (the Bol)",
+    summary: "Despite the focus on credit risk, I always aimed for automation projects and potentials for improvement. " +
+    "Also privately I highly enjoy programming, as well as reading about information technology, which is the reason for my " +
+    "decision to pursue a part-time degree in Applied Computer Science. " +
+    "After years of effort to make IT being part of my work, I finally decided to make an effort being part of IT instead."
   },
   personalscontainer: {
     "address-string": "Obere Belchenstr 17, 5012 Schoenenwerd",
@@ -10,7 +13,7 @@ const cv_obj = {
     mobile: "+41 76 565 3714",
     linkedin: "/sydney-hillen/",
   },
-  "workxp-list": [
+  "workxp": [
     {
       "workxp-department":
         "(Quantitative Analysis and Technology – Credit Suisse AG, Zurich)",
@@ -66,20 +69,23 @@ const cv_obj = {
   ],
   "student-workxp": [
     {
-      department: "Asset Liability Management – Sparkasse KölnBonn, Cologne",
-      "student-workxp-time": "01/15-03/15",
+      "workxp-title": "Asset Liability Management",
+      "workxp-location": "Sparkasse KölnBonn, Cologne",
+      "workxp-time": "01/15-03/15",
       "workxp-description":
         "Within my internship at Sparkasse KölnBonn I provided assistance to financial engineers, primarily responsible for the management of interest rate risks and asset-/ liability mismatches, but also hat the chance to collaborate with BlackRock representatives for the preparation of the bank's role as a custodian for umbrella funds.",
     },
     {
-      department: "Controlling – Bosch Rexroth AG, Witten",
-      "student-workxp-time": "02/14-08/14",
+      "workxp-title": "Controlling",
+      "workxp-location": "Bosch Rexroth AG, Witten",
+      "workxp-time": "02/14-08/14",
       "workxp-description":
         "My primary responsibilities included the development and improvement of budget planning processes and standardized management control systems.",
     },
     {
-      department: "Consulting – amx consulting, Hagen",
-      "student-workxp-time": "01/11-02/11",
+      "workxp-title": "Consulting",
+      "workxp-location": "amx consulting, Hagen",
+      "workxp-time": "01/11-02/11",
       "workxp-description":
         "I conducted research and analyses on candidate profiles for management positions in the fields of search engine optimisation and online media.",
     },
@@ -157,7 +163,7 @@ const cv_obj = {
     ],
   },
   languages: {
-    native: "German",
+    "native": "German",
     fluent: "English",
     good: "Spanish",
   },
