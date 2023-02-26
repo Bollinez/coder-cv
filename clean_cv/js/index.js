@@ -16,7 +16,7 @@ const cv_obj = {
   "workxp": [
     {
       "workxp-department":
-        "(Quantitative Analysis and Technology – Credit Suisse AG, Zurich)",
+        "Quantitative Analysis and Technology – Credit Suisse AG, Zurich",
       "workxp-title": "Senior Quantitative Analyst",
       "workxp-time": "02/23-present",
       "workxp-description": [
@@ -33,7 +33,7 @@ const cv_obj = {
     },
     {
       "workxp-department":
-        "(Quantitative Analysis and Technology – Credit Suisse AG, Zurich)",
+        "Quantitative Analysis and Technology – Credit Suisse AG, Zurich",
       "workxp-title": "Senior Model Developer",
       "workxp-time": "08/20-02/23",
       "workxp-description": [
@@ -44,7 +44,7 @@ const cv_obj = {
     },
     {
       "workxp-department":
-        "(Basel Measurement and Reporting – Credit Suisse AG, Zurich)",
+        "Basel Measurement and Reporting – Credit Suisse AG, Zurich",
       "workxp-title": "Line Management – Regulatory Reporting (IB)",
       "workxp-time": "10/19-08/20",
       "workxp-description": [
@@ -56,7 +56,7 @@ const cv_obj = {
     },
     {
       "workxp-department":
-        "(Basel Measurement and Reporting – Credit Suisse AG, Zurich)",
+        "Basel Measurement and Reporting – Credit Suisse AG, Zurich",
       "workxp-title": "Regulatory Reporting (PB)",
       "workxp-time": "01/17-10/19",
       "workxp-description": [
