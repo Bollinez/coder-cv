@@ -48,11 +48,29 @@ p {
 .imgcontainer {
     height: 13.5%;
     width: 28%;
-    float: left;
+    display: flex;
     padding: 0px;
-    background-color: #ffffff !important;
+    flex-wrap:nowrap;
+    justify-content:space-around;
+}
+.badge-wrapper {
+    display: flex;
+    flex-wrap:nowrap;
+    justify-content: center;
+}
+.img-badge {
+    max-height: 100%;
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
 }
 
+.img-badge2 {
+    max-height: 100%;
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+}
 .personalscontainer {
     display: flex;
     flex-wrap: wrap;
@@ -71,6 +89,7 @@ p {
     display: flex;
     width: 68.2%;
     float: left;
+    color: #595959;
     padding: 0px;
     background-color: #D9D9D9 !important;
     flex-direction: column;
@@ -91,23 +110,32 @@ p {
     justify-content: space-between;
 }
 
-.workxp-title {
+.workxp-title:not([id~="projects_clubs"]) {
     grid-column-start: 1;
     grid-column-end: 9;
     text-align: left;
-    font-size: 14px;
-    color: #595959 !important;
-    margin: 15px 15px 5px;
-    font-weight: bold;
+    font-size: 1em;
+    margin: 15px 5px 5px 15px;
+    font-weight:bolder;
 }
 
-.workxp-location {
+.workxp-grid-single-small {
+    justify-content: space-between;
+    color: #D9D9D9 !important;
+    font-size: 1em !important;
+    margin: inherit;
+    font-style: normal !important;
+    padding-inline-start: 0px;
+}
+
+
+
+.workxp-location:not([id~="projects_clubs"]) {
     grid-column-start: 1;
     grid-column-end: 9;
     grid-row: 2/2;
     text-align: left;
-    font-size: 12px;
-    color: #595959 !important;
+    font-size: 0.8em;
     margin: 0px 15px 5px;
     font-style: italic;
 }
@@ -117,8 +145,7 @@ p {
     grid-column-end: 11;
     grid-row: 1/1;
     text-align: right;
-    font-size: 14px;
-    color: #595959 !important;
+    font-size: 1em;
     margin: 15px 15px 5px;
     font-weight: 600;
 }
@@ -128,8 +155,7 @@ p {
     grid-column-end: 11;
     grid-row: 2/2;
     text-align: right;
-    font-size: 12px;
-    color: #595959 !important;
+    font-size: 0.8em;
     margin: 0px 15px 5px;
     font-style: italic;
 }
@@ -145,7 +171,6 @@ ul.workxp-description {
     list-style-type: disc;
     font-size: 12px;
     text-align: left;
-    color: #595959;
     padding-inline-start: 30px;
 }
 
@@ -154,7 +179,6 @@ ul.workxp-description-sub {
     margin: 0px 15px;
     font-size: 12px;
     text-align: left;
-    color: #595959;
     padding-inline-start: 60px;
 }
 
@@ -175,6 +199,8 @@ ul[id~= "interests"] {
     padding-inline-start: 15px;
 }
 
+
+
 .first-banner {
     display: flex;
     height: 80.5%;
@@ -184,7 +210,7 @@ ul[id~= "interests"] {
     background-color: #595959 !important;
 }
 
-ul.skilllist {
+ul.skilllist:not(#interests) {
     list-style-type: none;
     margin: 5px 1px 5px 5px;
     font-size: 12px;
@@ -199,6 +225,14 @@ ul.skilllist {
     padding-inline-end: 15px;
 }
 
+
+ul.skilllist[id~= "interests"]  {
+    list-style-type: none;
+    margin: 8px;
+    color: #D9D9D9;
+    padding-inline-start: 15px;
+    padding-inline-end: 15px;
+}
 
 
 ul.skilllist>li:not(:last-child):after{
@@ -232,8 +266,10 @@ ul.skilllist>li:not(:last-child):after{
     height: 100%;
     width: 28%;
     padding: 0px;
+    flex-direction: column;
     background-color: #595959 !important;
 }
+
 
 personaldetail {
     display: inherit;
@@ -243,6 +279,11 @@ personaldetail {
     flex: auto;
     color: #ffffff !important;
     background-color: #1A4A5D !important;
+}
+
+highl {
+    font-weight: bold;
+    color: #1A4A5D;
 }
 
 h1 {
@@ -256,12 +297,13 @@ h1 {
 
 
 h2 {
-    margin: 15px 15px 8px 20px;
+    margin: 15px 15px 5px 15px;
     font-size: 16px;
     text-align: left;
     width: 100% !important;
     height: fit-content;
     color: #1A4A5D !important;
+    font-weight: bold;
 }
 
 h2 span {
@@ -288,8 +330,8 @@ h3 {
 h5 {
     font-weight: 500;
     font-size: 12px;
-    margin: 15px;
-    margin-top: 20px;
+    margin: 10px;
+    margin-top: 10px;
     color: inherit;
     text-align: center;
     text-decoration-line: underline;

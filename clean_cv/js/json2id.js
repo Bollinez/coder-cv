@@ -2,10 +2,11 @@ const cv_obj = {
   summarybanner: {
     name: "Sydney Hillen",
     image: "../pycv/img/cv_img.jpg",
-    summary: "Despite the focus on credit risk, I always aimed for automation projects and potentials for improvement. " +
-    "Also privately I highly enjoy programming, as well as reading about information technology, which is the reason for my " +
-    "decision to pursue a part-time degree in Applied Computer Science. " +
-    "After years of effort to make IT being part of my work, I finally decided to make an effort being part of IT instead."
+    summary:
+      "Despite the focus on credit risk, I always aimed for automation projects and potentials for improvement. " +
+      "Also privately I highly enjoy programming, as well as reading about information technology, which is the reason for my " +
+      "decision to pursue a part-time degree in Applied Computer Science. " +
+      "After years of effort to make IT being part of my work, I finally decided to make an effort being part of IT instead.",
   },
   personalscontainer: {
     "address-string": "Obere Belchenstr 17, 5012 Schoenenwerd",
@@ -13,7 +14,7 @@ const cv_obj = {
     mobile: "+41 76 565 3714",
     linkedin: "/sydney-hillen/",
   },
-  "workxp": [
+  workxp: [
     {
       "workxp-department":
         "Quantitative Analysis and Technology – Credit Suisse AG, Zurich",
@@ -151,30 +152,27 @@ const cv_obj = {
   skills: {
     verygood: ["PL/SQL", "R", "Markdown", "git", "Python", "VBA", "JSON"],
     good: ["FSharp", "SAS", "Anaconda", "HTML", "CSS", "JavaScript"],
-    fundamentals: [
-      "Java",
-      "Azure",
-      "C#",
-      "Docker",
-      "Angular",
-      "Tableau"
-    ],
+    fundamentals: ["Java", "Azure", "C#", "Docker", "Angular", "Tableau"],
   },
   languages: {
-    "native": "German",
+    native: "German",
     fluent: "English",
     good: "Spanish",
   },
   interests: [
     "expanding my coding skills",
     "physical cosmology",
-    "astronomy", "my dog", "hiking", "basketball", "shooting range"
-    ],
+    "astronomy",
+    "my dog",
+    "hiking",
+    "basketball",
+    "shooting range",
+  ],
   references: [
     {
       name: "Dorothee Bill",
       company: "Credit Suisse",
-      relationship: "Former manager",
+      relationship: "Former manager within QAT",
       title: "Head of IRB Swiss Bank",
       department: "Quantitative Analysis and Technology",
       contact: "0123456789",
@@ -182,7 +180,7 @@ const cv_obj = {
     {
       name: "Dr. Massimo Cutaia",
       company: "Credit Suisse",
-      relationship: "Hiring manager",
+      relationship: "Hiring manager within QAT",
       title: "Global Head of Core Credit Modelling",
       department: "Quantitative Analysis and Technology",
       contact: "0123456789",
@@ -190,21 +188,63 @@ const cv_obj = {
     {
       name: "André Rebmann",
       company: "Credit Suisse",
-      relationship: "Former manager",
+      relationship: "Former manager within BMR",
       title: "Head of Swiss ",
       department: "Basel Measurement and Reporting",
       contact: "0123456789",
     },
   ],
-  projects_clubs: [
-    "CS Group Finance Innovation Circle (2018-2020)",
-    "CS Valuation in Resolution Data Sourcing (2019)",
-    "CS BMR Innovation Circle & Co-Project lead for Python & R process automation (2018)",
-  ],
+  projects_clubs: [ { area: "CS Finance Innovation Circle  (2018 - 2020)",
+  topics: "Representative of Swiss department in global working group " +
+    "bringing rather legacy-focussing areas closer to BI tools and process automation techniques."},
+    { area: "CS Valuation in Resolution Data Sourcing (2019)",
+    topics: "Proof of Concept for the implementation of big data tools (Hadoop) to prepare for " +
+    "for more requent reporting cycles and daily batch runs. "},
+    { area: "CS BMR Innovation Circle (2018)",
+    topics: "Co-Project lead for Python- & R-based process automation."}]
 };
 
 var listItem = "";
 var listHTML = "";
+var sideArrays = cv_obj.interests.concat(
+  cv_obj.projects_clubs,
+  cv_obj.education[0].topics,
+  cv_obj.education[1].topics,
+  cv_obj.education[2].topics
+);
+
+var skillsArray = 
+cv_obj.skills.fundamentals.concat(
+cv_obj.skills.good,
+cv_obj.skills.verygood);
+
+var keyWordCV = [
+  "FSharp",
+  "CI/CD",
+  "Python",
+  " R",
+  "git",
+  "Markdown",
+  "Angular",
+  "Bitbucket",
+  "Odyssey",
+  "Kanban",
+  "Jira",
+  "PL/SQL",
+  "SQL",
+];
+
+function containsAny(str, substrings) {
+  var matchesFound = [];
+  for (var i = 0; i != substrings.length; i++) {
+    var substring = substrings[i];
+    if (str.indexOf(substring) != -1) {
+      matchesFound.push(substring);
+    }
+  }
+  if (matchesFound.length > 0) return matchesFound;
+  else return null;
+}
 
 function iterateList(object, arrayname) {
   let objarr = object;
@@ -215,7 +255,17 @@ function iterateList(object, arrayname) {
 }
 
 function createHTMLList(value) {
-  listItem += "<li>" + value + "</li>";
+  var highlightWords = containsAny(value, keyWordCV);
+  var listItemSingle = "<li>" + value + "</li>";
+  if (highlightWords != null && (!sideArrays.includes(value) && !skillsArray.includes(value))) {
+    highlightWords.forEach(function(vle) {
+      var pattern = new RegExp(vle, 'g');
+      listItemSingle = listItemSingle.replace(pattern, "<highl>".concat(vle,"</highl>"));
+    } );
+    listItem += listItemSingle;
+  } else {
+    listItem += listItemSingle;
+  }
 }
 
 var buildID = (input, output = {}, key = []) => {
