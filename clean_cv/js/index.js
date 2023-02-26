@@ -150,16 +150,14 @@ const cv_obj = {
   ],
   skills: {
     verygood: ["PL/SQL", "R", "Markdown", "git", "Python", "VBA", "JSON"],
-    good: ["FSharp", "SAS", "Anaconda", "Kanban", "HTML", "CSS"],
+    good: ["FSharp", "SAS", "Anaconda", "HTML", "CSS", "JavaScript"],
     fundamentals: [
       "Java",
-      "jQuery",
-      "JavaScript",
       "Azure",
       "C#",
       "Docker",
       "Angular",
-      "Tableau",
+      "Tableau"
     ],
   },
   languages: {
@@ -167,14 +165,11 @@ const cv_obj = {
     fluent: "English",
     good: "Spanish",
   },
-  interests: {
-    active: ["my dog", "hiking", "basketball", "shooting range"],
-    not_active: [
-      "expanding my coding skills",
-      "physical cosmology",
-      "astronomy",
+  interests: [
+    "expanding my coding skills",
+    "physical cosmology",
+    "astronomy", "my dog", "hiking", "basketball", "shooting range"
     ],
-  },
   references: [
     {
       name: "Dorothee Bill",
