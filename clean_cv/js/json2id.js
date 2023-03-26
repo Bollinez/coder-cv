@@ -14,125 +14,124 @@ const cv_obj = {
   },
   workxp: [
     {
-      "workxp-department":
-        "Quantitative Analysis & Technology (QAT) <br> Credit Suisse Services AG Zurich",
-      "workxp-title": "Senior Quantitative Analyst",
-      "workxp-time": "02/23-present",
-      "workxp-description": [
+      "institution":
+        "Credit Suisse AG, Zurich (Quantitative Analysis & Technology - QAT)",
+      "title": "Senior Quantitative Analyst",
+      "time": "since 02/23",
+      "description": [
         "development and implementation of processes for the monitoring and backtesting of credit risk models using R and Python",
-        "automation of reports for senior management and Swiss Financial Market Supervisory Authority (FINMA) using Angular and Python",
+        "report automation for senior management and FINMA using Angular and Python",
       ],
-      "workxp-description-sub": [],
+      "description-sub": [],
     },
     {
-      "workxp-department":
-        "Quantitative Analysis and Technology <br> Credit Suisse Services AG Zurich",
-      "workxp-title": "Senior Model Developer",
-      "workxp-time": "08/20-02/23",
-      "workxp-description": [
-        "development and maintenance of credit risk models using advanced statistical methods, including machine learning models such as gradient boosting or lasso regression in R",
+      "institution":
+      "Credit Suisse AG, Zurich (Quantitative Analysis & Technology - QAT)",
+      "title": "Senior Model Developer",
+      "time": "08/20-02/23",
+      "description": [
+        "development of credit risk models using advanced statistical methods, including machine learning models in R",
         "application of standards for code versioning and documentation, as well as issue management using git and Odyssey Bitbucket",
         "project plan and workflow management using Jira and Kanban",
         "development of a model prototype using F# and Angular as a proof of concept to move from a waterfall delivery model to a continuous integration and continuous delivery (CI/CD) practice",
         "automation of the economic downturn analysis for internal-rating-based (IRB) modelling using R Markdown, including: ",
       ],
-      "workxp-description-sub": [
+      "description-sub": [
         "collection, processing and aggregation of macroeconomic data from external sources using R and PL/SQL",
         "application of regulatory standards for the estimation of economic downturns on portfolio-level",
       ],
     },
     {
-      "workxp-department":
-        "Basel Measurement and Reporting <br> Credit Suisse Services AG Zurich",
-      "workxp-title": "Line Management – Regulatory Reporting (IB)",
-      "workxp-time": "10/19-08/20",
-      "workxp-description": [
+      "institution":
+        "Credit Suisse AG, Zurich (Basel Measurement & Reporting - BMR)",
+      "title": "Line Management – Regulatory Reporting (IB)",
+      "time": "10/19-08/20",
+      "description": [
         "improvement of data quality for Basel III regulatory reporting purposes, by supporting the implementation and testing of change requests from the business side",
         "reduction of dependencies from multiple web-based BI tools with limited third-party application compatibility and shifting the team's data sourcing towards SQL- and Python-based queries",
         "review of Compliance- and MIS reports for credit risk- and balance sheet figures for the Swiss Investment Banking business",
       ],
-      "workxp-description-sub": [],
+      "description-sub": [],
     },
     {
-      "workxp-department":
-        "Basel Measurement and Reporting – Credit Suisse AG, Zurich",
-      "workxp-title": "Regulatory Reporting (PB)",
-      "workxp-time": "01/17-10/19",
-      "workxp-description": [
+      "institution":
+      "Credit Suisse AG, Zurich (Basel Measurement and Reporting - BMR)",
+      "title": "Regulatory Reporting (PB)",
+      "time": "01/17-10/19",
+      "description": [
         "preparation and presentation of main drivers for credit risk movements to the CFO of Credit Suisse (Switzerland) Ltd.",
         "performance of test cases and validations for the decommissioning and replacement of legacy applications",
         "participation in the working group targeting more frequent reporting cycles as the SME for data flows within PB-related regulatory reporting processes",
       ],
-      "workxp-description-sub": [],
+      "description-sub": [],
     },
   ],
   "student-workxp": [
     {
-      "workxp-title": "Asset Liability Management",
-      "workxp-location": "Sparkasse KölnBonn, Cologne",
-      "workxp-time": "01/15-03/15",
-      "workxp-description":
-        "Within my internship at Sparkasse KölnBonn I provided assistance to financial engineers, " +
-        "primarily responsible for the management of interest rate risks and asset-/ liability mismatches, " +
-        "but also had the chance to collaborate with BlackRock representatives for the preparation of the bank's role as a custodian for umbrella funds.",
+      "title": "Asset Liability Management",
+      "institution": "Sparkasse KölnBonn, Cologne",
+      "time": "01/15-03/15",
+      "description": [
+        "support of financial engineers, primarily responsible for the management of interest rate risks and asset-/ liability mismatches",
+        "assistance during the collaboration with BlackRock for the preparation of the bank's role as a custodian for umbrella funds"
+      ]
     },
     {
-      "workxp-title": "Controlling",
-      "workxp-location": "Bosch Rexroth AG, Witten",
-      "workxp-time": "02/14-08/14",
-      "workxp-description":
-        "My primary responsibilities included the development and improvement of budget planning processes and standardized management control systems.",
+      "title": "Controlling",
+      "institution": "Bosch Rexroth AG, Witten",
+      "time": "02/14-08/14",
+      "description": [
+        "development and improvement of budget planning processes and standardized management control systems"
+      ]
     },
     {
-      "workxp-title": "Consulting",
-      "workxp-location": "amx consulting, Hagen",
-      "workxp-time": "01/11-02/11",
-      "workxp-description":
-        "I conducted research and analyses on candidate profiles for management positions in the fields of search engine optimisation and online media.",
+      "title": "Consulting",
+      "institution": "amx consulting, Hagen",
+      "time": "01/11-02/11",
+      "description": [
+        "research and analyses on candidate profiles for management positions in the fields of search engine optimization and online media"
+      ]
     },
   ],
   education: [
     {
-      institution: "FernUniversität Hagen",
-      area: "Applied Computer Science",
-      studyType: "Master of Science",
-      "education-time": "2022-2025 (approx.)",
+      institution: "FernUniversität Hagen (Remote University)",
+      title: "Master of Science (Applied Computer Science)",
+      time: "since 2022",
       details: {},
-      topics: [
-        "Architecture and Implementation of Databases",
-        "Parallel Programming",
-        "Data Engineering for Data Science",
+      description: [
+        "architecture and implementation of databases",
+        "parallel programming",
+        "data engineering for data science",
       ],
     },
     {
       institution: "International School of Management Dortmund",
-      area: "Finance",
-      studyType: "Master of Science",
-      "education-time": "09/14-12/16",
+      title: "Master of Science (Finance)",
+      time: "09/14-12/16",
       details: {
         grade: "Excellent with 1.39",
         semesterabroad: {
           institution: "Oxford Brookes University, Oxford",
           grade: "Excellent with 1.0",
-          "education-time": "09/15-12/15",
+          time: "09/15-12/15",
         },
       },
-      topics: ["Portfolio Modelling (C# based)", "Asset Management"],
+      description: ["portfolio modelling (C# based)", "asset management"],
     },
     {
       institution: "International School of Management Dortmund",
-      area: "International Management",
-      studyType: "Bachelor of Arts",
-      "education-time": "09/10-08/14",
+      title: "Bachelor of Arts (International Management)",
+      time: "09/10-08/14",
       details: {
         grade: "Good with 2.1",
         semesterabroad: {
           institution: "European Business School, Dublin",
           grade: "Excellent with 1.0",
-          "education-time": "01/12-04/12",
+          time: "01/12-04/12",
         },
       },
-      topics: ["Project Management", "Finance"],
+      description: ["project management", "finance"],
     },
   ],
   certificates: [

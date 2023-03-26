@@ -4,31 +4,20 @@
 
 body {
     display: block;
-    font-size: 14px;
+    font-size: 12px;
     margin: 0px;
+    font-weight: normal;
 }
 
 p {
     margin: 5px 10px 0px 15px;
-    font-size: 12px;
-    line-height: 1rem;
-    text-align: left;
-    width: fit-content;
-    height: fit-content;
-    color: #595959;
-}
-
-.workxp-grid-single::before {
-    font-size: 12px;
-    text-align: center;
     color: #595959;
 }
 
 .rowidbanner {
     width: 3.8%;
     float: left;
-    padding: 0px;
-    background-color: #595959 !important;
+    background-color: #707070 !important;
     height: 100%;
 }
 
@@ -37,15 +26,15 @@ p {
     display: flex;
     margin: 0px;
     flex-direction: column;
-    height: 13.5%;
+    height: 15%;
     width: 68.2%;
     float: left;
     padding: 0px;
-    background-color: #D9D9D9 !important;
+    background-color: #efefef !important;
 }
 
 .imgcontainer {
-    height: 13.5%;
+    height: 15%;
     width: 28%;
     display: flex;
     padding: 0px;
@@ -64,17 +53,12 @@ p {
     justify-content: flex-start;
 }
 
-.img-badge2 {
-    max-height: 100%;
-    width: auto;
-    display: flex;
-    justify-content: flex-start;
-}
 .personalscontainer {
     display: flex;
     flex-wrap: wrap;
     height: 6%;
     width: 96.2%;
+    font-size: 1.1em;
     box-sizing: border-box;
     gap: 5px;
     border-left: 8px solid #ffffff;
@@ -91,7 +75,7 @@ p {
     float: left;
     color: #595959;
     padding: 0px;
-    background-color: #D9D9D9 !important;
+    background-color: #efefef !important;
     flex-direction: column;
 }
 
@@ -101,7 +85,7 @@ p {
     height: 100%;
     float: left;
     padding: 0px;
-    background-color: #D9D9D9 !important;
+    background-color: #efefef !important;
     flex-direction: column;
 }
 
@@ -110,17 +94,40 @@ p {
     justify-content: space-between;
 }
 
-.workxp-title {
+.title {
+    display: grid;
     grid-column-start: 1;
-    grid-column-end: 9;
+    grid-column-end: 10;
     text-align: left;
-    font-size: 1em;
+    font-size: 1.1em;
     margin: 15px 5px 5px 15px;
     font-weight:bolder;
 }
-.projects-title {
+.time {
+    grid-column-start: 10;
+    grid-column-end: 12;
+    grid-row: 1/1;
+    text-align: right;
+    font-size: 1em;
+    margin: 15px 15px 5px;
+    font-weight: 600;
+}
+
+.location:not([id~="projects_clubs"]) {
+    display: grid;
     grid-column-start: 1;
-    grid-column-end: 9;
+    grid-column-end: 11;
+    grid-row: 2/2;
+    text-align: left;
+    font-size: 0.9em;
+    margin: 0px 15px 5px;
+    font-style: italic;
+}
+
+.projects-title {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 10;
     text-align: left;
     font-size: 0.9em;
     margin: 15px 15px 5px 15px;
@@ -128,8 +135,9 @@ p {
 
 
 .projects-descr {
+    display: grid;
     grid-column-start: 1;
-    grid-column-end: 9;
+    grid-column-end: 10;
     grid-row: 2/2;
     text-align: left;
     font-size: 0.8em;
@@ -139,7 +147,7 @@ p {
 
 .workxp-grid-single-small {
     justify-content: space-between;
-    color: #D9D9D9 !important;
+    color: #efefef !important;
     font-size: 1em !important;
     margin: inherit;
     font-style: normal !important;
@@ -148,34 +156,15 @@ p {
 
 
 
-.workxp-location:not([id~="projects_clubs"]) {
-    grid-column-start: 1;
-    grid-column-end: 9;
-    grid-row: 2/2;
-    text-align: left;
-    font-size: 0.8em;
-    margin: 0px 15px 5px;
-    font-style: italic;
-}
 *, *:before, *:after {
     box-sizing: border-box;
   }
-.workxp-time {
-    grid-column-start: 9;
-    grid-column-end: 11;
-    grid-row: 1/1;
-    text-align: right;
-    font-size: 1em;
-    margin: 15px 15px 5px;
-    font-weight: 600;
-}
-
 .education-grade {
-    grid-column-start: 9;
-    grid-column-end: 11;
+    grid-column-start: 10;
+    grid-column-end: 12;
     grid-row: 2/2;
     text-align: right;
-    font-size: 0.8em;
+    font-size: 0.9em;
     margin: 0px 15px 5px;
     font-style: italic;
 }
@@ -186,27 +175,27 @@ li {
 }
 
 
-ul.workxp-description {
+ul.description {
     margin: 5px 15px;
     list-style-type: disc;
+    font-size: 12px;
+    text-align: left;
+    padding-inline-start: 15px;
+}
+
+ul.description-sub {
+    list-style-type: none;
+    margin: 0px 15px;
     font-size: 12px;
     text-align: left;
     padding-inline-start: 30px;
 }
 
-ul.workxp-description-sub {
-    list-style-type: none;
-    margin: 0px 15px;
-    font-size: 12px;
-    text-align: left;
-    padding-inline-start: 60px;
-}
-
-ul.workxp-description-sub>li {
+ul.description-sub>li {
     text-indent: -12px;
 }
 
-ul.workxp-description-sub>li:before {
+ul.description-sub>li:before {
     content: "- ";
     text-indent: -10px;
 }
@@ -215,7 +204,7 @@ ul[id~= "interests"] {
     margin: 5px 15px;
     font-size: 12px;
     text-align: left;
-    color: #D9D9D9;
+    color: #efefef;
     padding-inline-start: 15px;
 }
 
@@ -227,7 +216,7 @@ ul[id~= "interests"] {
     width: 28%;
     padding: 0px;
     flex-direction: column;
-    background-color: #595959 !important;
+    background-color: #707070 !important;
 }
 
 ul.skilllist:not(#interests) {
@@ -239,7 +228,7 @@ ul.skilllist:not(#interests) {
     display: flex;
     align-content: flex-start;
     flex-wrap: wrap;
-    color: #D9D9D9;
+    color: #efefef;
     
     padding-inline-start: 15px;
     padding-inline-end: 15px;
@@ -249,7 +238,7 @@ ul.skilllist:not(#interests) {
 ul.skilllist[id~= "interests"]  {
     list-style-type: none;
     margin: 8px;
-    color: #D9D9D9;
+    color: #efefef;
     padding-inline-start: 15px;
     padding-inline-end: 15px;
 }
@@ -261,7 +250,7 @@ ul.skilllist>li:not(:last-child):after{
 }
 
 #skillblock {
-    background-color: rgb(192, 192, 192, 0.75) !important;
+    background-color: rgb(239, 239, 239, 0.75) !important;
     border-radius: 10px;
     height: 20px;
     margin: 0px 15px;
@@ -273,7 +262,7 @@ ul.skilllist>li:not(:last-child):after{
     background-color: #1A4A5D !important;
     border-radius: 10px;
     height: 20px;
-    color:#D9D9D9;
+    color:#efefef;
     font-size: 10px;
     text-align: center;
     align-items: center;
@@ -323,7 +312,7 @@ h1::after {
 }
 
 h2 {
-    margin: 15px 0px 5px 15px;
+    margin: 15px 0px 10px 15px;
     font-size: 16px;
     text-align: left;
     height: fit-content;
@@ -334,7 +323,7 @@ h2 {
 h2 span {
     margin: 15px 0px 0px 0px;
     padding: 1px;
-    background-color: rgb(192, 192, 192, 0.75);
+    background-color: rgba(190, 190, 190, 0.75);
 }
 
 
@@ -366,11 +355,11 @@ h6 {
     font-size: 1em;
     line-height: 0.8em;
     text-align: right;
-    color: #D9D9D9 !important;
+    color: #efefef !important;
 }
 
 page[size="A4"] {
-    background: #D9D9D9;
+    background: #efefef;
     width: 21cm;
     height: 29.7cm;
     display: block;
