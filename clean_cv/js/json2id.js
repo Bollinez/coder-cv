@@ -3,10 +3,8 @@ const cv_obj = {
     name: "Sydney Hillen",
     image: "../pycv/img/cv_img.jpg",
     summary:
-      "Despite the focus on credit risk, I always aimed for automation projects and potentials for improvement. " +
-      "Also privately I highly enjoy programming, as well as reading about information technology, which is the reason for my " +
-      "decision to pursue a part-time degree in Applied Computer Science. " +
-      "After years of effort to make IT being part of my work, I finally decided to make an effort being part of IT instead.",
+      "Motivated by complexity and the vast amount of available tools to solve problems, I am eager to " +
+      "join a team of critical thinkers, who enjoy working with data as much as I do. " 
   },
   personalscontainer: {
     "address-string": "Obere Belchenstr 17, 5012 Schoenenwerd",
@@ -17,14 +15,25 @@ const cv_obj = {
   workxp: [
     {
       "workxp-department":
-        "Quantitative Analysis and Technology – Credit Suisse AG, Zurich",
+        "Quantitative Analysis & Technology (QAT) <br> Credit Suisse Services AG Zurich",
       "workxp-title": "Senior Quantitative Analyst",
       "workxp-time": "02/23-present",
+      "workxp-description": [
+        "development and implementation of processes for the monitoring and backtesting of credit risk models using R and Python",
+        "automation of reports for senior management and Swiss Financial Market Supervisory Authority (FINMA) using Angular and Python",
+      ],
+      "workxp-description-sub": [],
+    },
+    {
+      "workxp-department":
+        "Quantitative Analysis and Technology <br> Credit Suisse Services AG Zurich",
+      "workxp-title": "Senior Model Developer",
+      "workxp-time": "08/20-02/23",
       "workxp-description": [
         "development and maintenance of credit risk models using advanced statistical methods, including machine learning models such as gradient boosting or lasso regression in R",
         "application of standards for code versioning and documentation, as well as issue management using git and Odyssey Bitbucket",
         "project plan and workflow management using Jira and Kanban",
-        "development of a model prototype using Fsharp and Angular as a proof of concept to move from a waterfall delivery model to a continuous integration and continuous delivery (CI/CD) practice",
+        "development of a model prototype using F# and Angular as a proof of concept to move from a waterfall delivery model to a continuous integration and continuous delivery (CI/CD) practice",
         "automation of the economic downturn analysis for internal-rating-based (IRB) modelling using R Markdown, including: ",
       ],
       "workxp-description-sub": [
@@ -34,18 +43,7 @@ const cv_obj = {
     },
     {
       "workxp-department":
-        "Quantitative Analysis and Technology – Credit Suisse AG, Zurich",
-      "workxp-title": "Senior Model Developer",
-      "workxp-time": "08/20-02/23",
-      "workxp-description": [
-        "development and implementation of processes for the monitoring and backtesting of credit risk models using R and Python",
-        "automation of report production for senior management and Swiss Financial Market Supervisory Authority (FINMA) using Python",
-      ],
-      "workxp-description-sub": [],
-    },
-    {
-      "workxp-department":
-        "Basel Measurement and Reporting – Credit Suisse AG, Zurich",
+        "Basel Measurement and Reporting <br> Credit Suisse Services AG Zurich",
       "workxp-title": "Line Management – Regulatory Reporting (IB)",
       "workxp-time": "10/19-08/20",
       "workxp-description": [
@@ -62,7 +60,7 @@ const cv_obj = {
       "workxp-time": "01/17-10/19",
       "workxp-description": [
         "preparation and presentation of main drivers for credit risk movements to the CFO of Credit Suisse (Switzerland) Ltd.",
-        "performance of test cases and validations for the decommissioning and replacement of applications used for regular business processes",
+        "performance of test cases and validations for the decommissioning and replacement of legacy applications",
         "participation in the working group targeting more frequent reporting cycles as the SME for data flows within PB-related regulatory reporting processes",
       ],
       "workxp-description-sub": [],
@@ -74,7 +72,9 @@ const cv_obj = {
       "workxp-location": "Sparkasse KölnBonn, Cologne",
       "workxp-time": "01/15-03/15",
       "workxp-description":
-        "Within my internship at Sparkasse KölnBonn I provided assistance to financial engineers, primarily responsible for the management of interest rate risks and asset-/ liability mismatches, but also hat the chance to collaborate with BlackRock representatives for the preparation of the bank's role as a custodian for umbrella funds.",
+        "Within my internship at Sparkasse KölnBonn I provided assistance to financial engineers, " +
+        "primarily responsible for the management of interest rate risks and asset-/ liability mismatches, " +
+        "but also had the chance to collaborate with BlackRock representatives for the preparation of the bank's role as a custodian for umbrella funds.",
     },
     {
       "workxp-title": "Controlling",
@@ -151,7 +151,7 @@ const cv_obj = {
   ],
   skills: {
     verygood: ["PL/SQL", "R", "Markdown", "git", "Python", "VBA", "JSON"],
-    good: ["FSharp", "SAS", "Anaconda", "HTML", "CSS", "JavaScript"],
+    good: ["F#", "SAS", "Anaconda", "HTML", "CSS", "JavaScript"],
     fundamentals: ["Java", "Azure", "C#", "Docker", "Angular", "Tableau"],
   },
   languages: {
@@ -171,27 +171,35 @@ const cv_obj = {
   references: [
     {
       name: "Dorothee Bill",
-      company: "Credit Suisse",
-      relationship: "Former manager within QAT",
-      title: "Head of IRB Swiss Bank",
+      company: "Credit Suisse AG",
+      relationship: "Former manager",
+      title: "Head of IRB Swiss Bank (QAT)",
       department: "Quantitative Analysis and Technology",
-      contact: "0123456789",
+      contact: "+41 78 883 20 47",
     },
     {
       name: "Dr. Massimo Cutaia",
       company: "Credit Suisse",
-      relationship: "Hiring manager within QAT",
-      title: "Global Head of Core Credit Modelling",
+      relationship: "Former hiring manager",
+      title: "Global Head of Core Credit Modelling (QAT)",
       department: "Quantitative Analysis and Technology",
-      contact: "0123456789",
+      contact: "+41 44 334 28 68",
     },
     {
       name: "André Rebmann",
       company: "Credit Suisse",
-      relationship: "Former manager within BMR",
-      title: "Head of Swiss ",
+      relationship: "Former manager",
+      title: "Director (BMR)",
       department: "Basel Measurement and Reporting",
-      contact: "0123456789",
+      contact: "+41 44 333 01 59"
+    },
+    {
+      name: "Sandro Cathomen",
+      company: "Credit Suisse",
+      relationship: "Former colleague (BMR)",
+      title: "Investment Reporting Analyst",
+      department: "Basel Measurement and Reporting",
+      contact: "+41 78 659 16 71"
     },
   ],
   projects_clubs: [ { area: "CS Finance Innovation Circle  (2018 - 2020)",
@@ -199,7 +207,7 @@ const cv_obj = {
     "bringing rather legacy-focussing areas closer to BI tools and process automation techniques."},
     { area: "CS Valuation in Resolution Data Sourcing (2019)",
     topics: "Proof of Concept for the implementation of big data tools (Hadoop) to prepare for " +
-    "for more requent reporting cycles and daily batch runs. "},
+    "more requent reporting cycles and daily batch runs. "},
     { area: "CS BMR Innovation Circle (2018)",
     topics: "Co-Project lead for Python- & R-based process automation."}]
 };
@@ -219,7 +227,7 @@ cv_obj.skills.good,
 cv_obj.skills.verygood);
 
 var keyWordCV = [
-  "FSharp",
+  "F#",
   "CI/CD",
   "Python",
   " R",

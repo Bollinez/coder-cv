@@ -4,7 +4,6 @@
 
 body {
     display: block;
-    color: #595959 !important;
     font-size: 14px;
     margin: 0px;
 }
@@ -88,6 +87,7 @@ p {
 .workxp-container {
     display: flex;
     width: 68.2%;
+    height: 80.5%;
     float: left;
     color: #595959;
     padding: 0px;
@@ -110,7 +110,7 @@ p {
     justify-content: space-between;
 }
 
-.workxp-title:not([id~="projects_clubs"]) {
+.workxp-title {
     grid-column-start: 1;
     grid-column-end: 9;
     text-align: left;
@@ -118,6 +118,24 @@ p {
     margin: 15px 5px 5px 15px;
     font-weight:bolder;
 }
+.projects-title {
+    grid-column-start: 1;
+    grid-column-end: 9;
+    text-align: left;
+    font-size: 0.9em;
+    margin: 15px 15px 5px 15px;
+}
+
+
+.projects-descr {
+    grid-column-start: 1;
+    grid-column-end: 9;
+    grid-row: 2/2;
+    text-align: left;
+    font-size: 0.8em;
+    margin: 0px 15px 5px;
+}
+
 
 .workxp-grid-single-small {
     justify-content: space-between;
@@ -139,7 +157,9 @@ p {
     margin: 0px 15px 5px;
     font-style: italic;
 }
-
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
 .workxp-time {
     grid-column-start: 9;
     grid-column-end: 11;
@@ -287,27 +307,32 @@ highl {
 }
 
 h1 {
-    margin-left: 15px;
+    margin-left: 0px;
     margin-bottom: 0px;
     font-size: 19px;
     text-align: left;
     display: inline;
     color: #595959 !important;
 }
+pre {
+    margin-left: 15px;
+}
 
+h1::after {
+    content: "'";
+}
 
 h2 {
-    margin: 15px 15px 5px 15px;
+    margin: 15px 0px 5px 15px;
     font-size: 16px;
     text-align: left;
-    width: 100% !important;
     height: fit-content;
     color: #1A4A5D !important;
     font-weight: bold;
 }
 
 h2 span {
-    margin: 15px 0px 8px 0px;
+    margin: 15px 0px 0px 0px;
     padding: 1px;
     background-color: rgb(192, 192, 192, 0.75);
 }
@@ -322,8 +347,7 @@ h3 {
     font-weight: bold;
     flex-grow: 3;
     justify-content: space-around;
-    text-decoration-line: underline;
-    color: #595959 !important;
+    text-decoration-line: underline; 
 }
 
 
@@ -350,7 +374,7 @@ page[size="A4"] {
     width: 21cm;
     height: 29.7cm;
     display: block;
-    margin: 0 auto;
+    margin: 0cm auto;
     page-break-after: always;
     margin-bottom: 0.5cm;
     box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
@@ -360,11 +384,10 @@ page[size="A4"] {
 @media print {
 
     body,
-    page[size="A4"],
-    .rowidbanner {
-        margin: 0;
-        box-shadow: 0;
-        -webkit-print-color-adjust: exact;
+    page[size="A4"]  {
+        margin: 0px;
+        box-shadow: 0px;
         print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
     }
 }
