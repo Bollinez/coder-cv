@@ -3,8 +3,9 @@ const cv_obj = {
     name: "Sydney Hillen",
     image: "../pycv/img/cv_img.jpg",
     summary:
-      "Motivated by complexity and the vast amount of available tools to solve problems, I am eager to " +
-      "join a team of critical thinkers, who enjoy working with data as much as I do. " 
+      "Data-driven risk professional with experience in Python, F#, R, SQL, Oracle Databases and expertise in developing " +
+      "advanced credit risk models. Motivated to explore the constantly evolving universe of tech-tools and eager to " +
+      "join a team of critical thinkers, who are equally passionate. " 
   },
   personalscontainer: {
     "address-string": "Obere Belchenstr 17, 5012 Schoenenwerd",
@@ -61,7 +62,7 @@ const cv_obj = {
       "description": [
         "preparation and presentation of main drivers for credit risk movements to the CFO of Credit Suisse (Switzerland) Ltd.",
         "performance of test cases and validations for the decommissioning and replacement of legacy applications",
-        "participation in the working group targeting more frequent reporting cycles as the SME for data flows within PB-related regulatory reporting processes",
+        "participation in the working group targeting shorter reporting cycles as the SME for data flows within PB-related regulatory reporting processes",
       ],
       "description-sub": [],
     },
@@ -171,30 +172,30 @@ const cv_obj = {
     {
       name: "Dorothee Bill",
       company: "Credit Suisse AG",
-      relationship: "Former manager",
-      title: "Head of IRB Swiss Bank (QAT)",
-      department: "Quantitative Analysis and Technology",
+      relationship: "Former manager (QAT)",
+      title: "Head of IRB Swiss Bank",
+      department: "Quantitative Analysis and Technology (QAT)",
       contact: "+41 78 883 20 47",
     },
     {
       name: "Dr. Massimo Cutaia",
-      company: "Credit Suisse",
-      relationship: "Former hiring manager",
+      company: "Credit Suisse AG",
+      relationship: "Former hiring manager (QAT)",
       title: "Global Head of Core Credit Modelling (QAT)",
       department: "Quantitative Analysis and Technology",
       contact: "+41 44 334 28 68",
     },
     {
       name: "André Rebmann",
-      company: "Credit Suisse",
-      relationship: "Former manager",
-      title: "Director (BMR)",
+      company: "Credit Suisse AG",
+      relationship: "Former manager (BMR)",
+      title: "Director",
       department: "Basel Measurement and Reporting",
       contact: "+41 44 333 01 59"
     },
     {
       name: "Sandro Cathomen",
-      company: "Credit Suisse",
+      company: "Credit Suisse AG",
       relationship: "Former colleague (BMR)",
       title: "Investment Reporting Analyst",
       department: "Basel Measurement and Reporting",

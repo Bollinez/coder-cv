@@ -9,6 +9,7 @@ body {
     font-weight: normal;
 }
 
+
 p {
     margin: 5px 10px 0px 15px;
     color: #595959;
@@ -17,6 +18,7 @@ p {
 .rowidbanner {
     width: 3.8%;
     float: left;
+    text-align: right;
     background-color: #707070 !important;
     height: 100%;
 }
@@ -30,7 +32,7 @@ p {
     width: 68.2%;
     float: left;
     padding: 0px;
-    background-color: #efefef !important;
+    background-color: #ffffff !important;
 }
 
 .imgcontainer {
@@ -42,6 +44,7 @@ p {
     justify-content:space-around;
 }
 .badge-wrapper {
+    margin-top: 15px;
     display: flex;
     flex-wrap:nowrap;
     justify-content: center;
@@ -56,26 +59,26 @@ p {
 .personalscontainer {
     display: flex;
     flex-wrap: wrap;
-    height: 6%;
+    height: 5%;
     width: 96.2%;
-    font-size: 1.1em;
+    font-size: 1em;
     box-sizing: border-box;
     gap: 5px;
-    border-left: 8px solid #ffffff;
-    border-right: 8px solid #ffffff;
-    border-top: 5px solid #ffffff;
-    border-bottom: 5px solid #ffffff;
-    background-color: #ffffff !important;
+    border-left: 8px solid #707070;
+    border-right: 8px solid #707070;
+    border-top: 5px solid #707070;
+    border-bottom: 5px solid #707070;
+    background-color: #707070 !important;
 }
 
 .workxp-container {
     display: flex;
     width: 68.2%;
-    height: 80.5%;
+    height: 80%;
     float: left;
     color: #595959;
     padding: 0px;
-    background-color: #efefef !important;
+    background-color: #ffffff !important;
     flex-direction: column;
 }
 
@@ -85,13 +88,14 @@ p {
     height: 100%;
     float: left;
     padding: 0px;
-    background-color: #efefef !important;
+    background-color: #ffffff !important;
     flex-direction: column;
 }
 
 .workxp-grid-single {
     display: grid;
-    justify-content: space-between;
+    margin: 15px 15px 5px;
+    gap: 5px 0px;
 }
 
 .title {
@@ -100,7 +104,6 @@ p {
     grid-column-end: 10;
     text-align: left;
     font-size: 1.1em;
-    margin: 15px 5px 5px 15px;
     font-weight:bolder;
 }
 .time {
@@ -109,7 +112,6 @@ p {
     grid-row: 1/1;
     text-align: right;
     font-size: 1em;
-    margin: 15px 15px 5px;
     font-weight: 600;
 }
 
@@ -120,7 +122,6 @@ p {
     grid-row: 2/2;
     text-align: left;
     font-size: 0.9em;
-    margin: 0px 15px 5px;
     font-style: italic;
 }
 
@@ -129,8 +130,9 @@ p {
     grid-column-start: 1;
     grid-column-end: 10;
     text-align: left;
+    text-decoration: underline;
     font-size: 0.9em;
-    margin: 15px 15px 5px 15px;
+    margin: 20px 15px 5px;
 }
 
 
@@ -140,14 +142,14 @@ p {
     grid-column-end: 10;
     grid-row: 2/2;
     text-align: left;
-    font-size: 0.8em;
+    font-size: 0.9em;
     margin: 0px 15px 5px;
 }
 
 
 .workxp-grid-single-small {
     justify-content: space-between;
-    color: #efefef !important;
+    color: #ffffff !important;
     font-size: 1em !important;
     margin: inherit;
     font-style: normal !important;
@@ -178,7 +180,6 @@ li {
 ul.description {
     margin: 5px 15px;
     list-style-type: disc;
-    font-size: 12px;
     text-align: left;
     padding-inline-start: 15px;
 }
@@ -186,7 +187,6 @@ ul.description {
 ul.description-sub {
     list-style-type: none;
     margin: 0px 15px;
-    font-size: 12px;
     text-align: left;
     padding-inline-start: 30px;
 }
@@ -202,9 +202,9 @@ ul.description-sub>li:before {
 
 ul[id~= "interests"] {
     margin: 5px 15px;
-    font-size: 12px;
     text-align: left;
-    color: #efefef;
+    color: #ffffff;
+    font-size: 0.9em;
     padding-inline-start: 15px;
 }
 
@@ -212,7 +212,7 @@ ul[id~= "interests"] {
 
 .first-banner {
     display: flex;
-    height: 80.5%;
+    height: 80%;
     width: 28%;
     padding: 0px;
     flex-direction: column;
@@ -221,14 +221,14 @@ ul[id~= "interests"] {
 
 ul.skilllist:not(#interests) {
     list-style-type: none;
-    margin: 5px 1px 5px 5px;
+    margin: 15px 1px 5px 5px;
     font-size: 12px;
     text-align: left;
     justify-content:space-between;
     display: flex;
     align-content: flex-start;
     flex-wrap: wrap;
-    color: #efefef;
+    color: #ffffff;
     
     padding-inline-start: 15px;
     padding-inline-end: 15px;
@@ -238,7 +238,7 @@ ul.skilllist:not(#interests) {
 ul.skilllist[id~= "interests"]  {
     list-style-type: none;
     margin: 8px;
-    color: #efefef;
+    color: #ffffff;
     padding-inline-start: 15px;
     padding-inline-end: 15px;
 }
@@ -262,7 +262,7 @@ ul.skilllist>li:not(:last-child):after{
     background-color: #1A4A5D !important;
     border-radius: 10px;
     height: 20px;
-    color:#efefef;
+    color:#ffffff;
     font-size: 10px;
     text-align: center;
     align-items: center;
@@ -274,9 +274,8 @@ ul.skilllist>li:not(:last-child):after{
     display: flex;
     height: 100%;
     width: 28%;
-    padding: 0px;
     flex-direction: column;
-    background-color: #595959 !important;
+    background-color: #707070 !important;
 }
 
 
@@ -296,8 +295,6 @@ highl {
 }
 
 h1 {
-    margin-left: 0px;
-    margin-bottom: 0px;
     font-size: 19px;
     text-align: left;
     display: inline;
@@ -312,31 +309,16 @@ h1::after {
 }
 
 h2 {
-    margin: 15px 0px 10px 15px;
+    margin: 20px 15px 5px;
     font-size: 16px;
     text-align: left;
-    height: fit-content;
     color: #1A4A5D !important;
     font-weight: bold;
 }
 
 h2 span {
-    margin: 15px 0px 0px 0px;
     padding: 1px;
     background-color: rgba(190, 190, 190, 0.75);
-}
-
-
-
-h3 {
-    margin: 10px 15px 5px;
-    display: flex;
-    font-size: 16px;
-    text-align: left;
-    font-weight: bold;
-    flex-grow: 3;
-    justify-content: space-around;
-    text-decoration-line: underline; 
 }
 
 
@@ -344,24 +326,27 @@ h5 {
     font-weight: 500;
     font-size: 12px;
     margin: 10px;
-    margin-top: 10px;
     color: inherit;
     text-align: center;
     text-decoration-line: underline;
 }
 
 h6 {
-    margin: 0.5em;
+    margin: 2px 5px;
     font-size: 1em;
-    line-height: 0.8em;
     text-align: right;
+    display:flow-root;
     color: #efefef !important;
 }
-
+h6::before {
+    content: counter(rownum);
+    counter-increment: rownum 1;
+}
 page[size="A4"] {
-    background: #efefef;
+    background: #ffffff;
     width: 21cm;
     height: 29.7cm;
+    counter-reset: rownum;
     display: block;
     margin: 0cm auto;
     page-break-after: always;
