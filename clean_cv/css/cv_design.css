@@ -1,367 +1,355 @@
-* {
-    font-family: Hack, Consolas;
-}
-
-body {
-    display: block;
-    font-size: 12px;
-    margin: 0px;
-    font-weight: normal;
-}
-
-
+/* #region basic type selector properties */
+/* default font size, family and colors */
+body,
 p {
-    margin: 5px 10px 0px 15px;
+    font-size: 12px;
+    font-family: Hack, Consolas;
     color: #595959;
+    background-color: #ffffff;
+    margin: 15px;
 }
 
-.rowidbanner {
-    width: 3.8%;
-    float: left;
+
+/* first header properties */
+h1 {
+    display: inline;
+    font-size: 1.5em;
+    text-align: left;
+    margin: 15px 0 15px 15px;
+}
+
+/* to make self.name value look like a string we add quotes*/
+h1::after {
+    content: "'";
+}
+
+/* remove margins within quoted string */
+h1[id~="summarybanner-name"] {
+    margin: 0;
+}
+
+/* second header properties */
+h2 {
+    margin: 25px 15px 5px;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #1A4A5D;
+    text-align: left;
+}
+
+/* hashtag comment style background color */
+h2 span {
+    padding: 1px;
+    background-color: rgba(190, 190, 190, 0.75);
+}
+/* #endregion */
+
+/* ------------------------------------------------------------------------- */
+
+/* #region custom type selector properties */
+/* properties for left code editor style row-ids */
+editorrow {
+    margin: 2px 5px;
+    color: #efefef;
     text-align: right;
-    background-color: #707070 !important;
-    height: 100%;
 }
 
+editorrow::before {
+    content: counter(rownum);
+    counter-increment: rownum 1;
+}
 
+/* properties for personal details container */
+personaldetail {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: auto;
+    background-color: #1A4A5D;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+/* style for important skill keywords identified via JavaScript */
+highl {
+    font-weight: bold;
+    color: #1A4A5D;
+}
+/* #endregion */
+
+/* ------------------------------------------------------------------------- */
+
+/* #region outer boxes and columns */
+/* left banner representing code editor rows */
+.rowidbanner {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 3.8%;
+    height: 100%;
+    background-color: #707070;
+    text-align: right;
+    line-height: 12px;
+}
+
+/* flexbox at the top with summary of person */
 .summarybanner {
     display: flex;
-    margin: 0px;
     flex-direction: column;
-    height: 15%;
-    width: 68.2%;
-    float: left;
-    padding: 0px;
-    background-color: #ffffff !important;
-}
-
-.imgcontainer {
-    height: 15%;
-    width: 28%;
-    display: flex;
-    padding: 0px;
-    flex-wrap:nowrap;
-    justify-content:space-around;
-}
-.badge-wrapper {
-    margin-top: 15px;
-    display: flex;
-    flex-wrap:nowrap;
     justify-content: center;
-}
-.img-badge {
-    max-height: 100%;
-    width: auto;
-    display: flex;
-    justify-content: flex-start;
+    float: left;
+    width: 68.2%;
+    background-color: inherit;
+    height: 15%;
 }
 
+/* flexbox containing all personal details */
 .personalscontainer {
     display: flex;
     flex-wrap: wrap;
-    height: 5%;
-    width: 96.2%;
-    font-size: 1em;
-    box-sizing: border-box;
     gap: 5px;
-    border-left: 8px solid #707070;
-    border-right: 8px solid #707070;
+    box-sizing: border-box;
+    font-size: 0.9em;
+    width: 96.2%;
+    height: 5%;
+    background-color: #707070;
     border-top: 5px solid #707070;
+    border-right: 8px solid #707070;
     border-bottom: 5px solid #707070;
-    background-color: #707070 !important;
+    border-left: 8px solid #707070;
 }
 
+/* flexbox holding applicant picture */
+.imgcontainer {
+    display: flex;
+    width: 28%;
+    height: 15%;
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    width: 28%;
+    background-color: #707070;
+    color: #ffffff;
+}
+
+/* right side banner first page */
+.banner.first {
+    height: 80%;
+}
+
+/* right side banner second page */
+.banner.second {
+    height: 100%;
+}
+
+/* middle banner containing work experience */
 .workxp-container {
     display: flex;
-    width: 68.2%;
-    height: 80%;
-    float: left;
-    color: #595959;
-    padding: 0px;
-    background-color: #ffffff !important;
     flex-direction: column;
+    float: left;
+    background-color: inherit;
+    width: 68.2%;
+    max-height: 80%;
 }
+/* #endregion */
 
-.student-workxp-container {
+/* ------------------------------------------------------------------------- */
+
+/* #region image classes */
+.img-wrapper {
     display: flex;
-    width: 68.2%;
-    height: 100%;
-    float: left;
-    padding: 0px;
-    background-color: #ffffff !important;
-    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
 }
 
+.image {
+    display: inherit;
+    flex: 50%;
+    max-width: 50%;
+}
+/* #endregion */
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+/* ------------------------------------------------------------------------- */
+
+/* #region main work experience grid-items properties */
+/* grid box for precise arrangement of job details */
 .workxp-grid-single {
     display: grid;
+    gap: 5px 0;
     margin: 15px 15px 5px;
-    gap: 5px 0px;
 }
 
+/* properties for job title, time, company or location and description */
 .title {
-    display: grid;
+    display: inherit;
     grid-column-start: 1;
     grid-column-end: 10;
-    text-align: left;
     font-size: 1.1em;
-    font-weight:bolder;
-}
-.time {
-    grid-column-start: 10;
-    grid-column-end: 12;
-    grid-row: 1/1;
-    text-align: right;
-    font-size: 1em;
-    font-weight: 600;
+    font-weight: bolder;
+    text-align: left;
 }
 
-.location:not([id~="projects_clubs"]) {
-    display: grid;
+.time {
+    display: inherit;
+    grid-row: 1/1;
+    grid-column-start: 10;
+    grid-column-end: 12;
+    font-weight: 600;
+    text-align: right;
+}
+
+.location {
+    display: inherit;
+    grid-row: 2/2;
     grid-column-start: 1;
     grid-column-end: 11;
-    grid-row: 2/2;
-    text-align: left;
     font-size: 0.9em;
     font-style: italic;
+    text-align: left;
+}
+
+.education-grade {
+    display: inherit;
+    grid-row: 2/2;
+    grid-column-start: 10;
+    grid-column-end: 12;
+    font-size: 0.9em;
+    font-style: italic;
+    text-align: right;
+}
+/* #endregion */
+
+/* ------------------------------------------------------------------------- */
+
+/* #region right side banner grid-items properties */
+/* separate property needed to fit into right side banner */
+.workxp-grid-single-small {
+    margin: 15px;
+    font-size: 0.9em;
+    text-align: left;
 }
 
 .projects-title {
-    display: grid;
-    grid-column-start: 1;
-    grid-column-end: 10;
-    text-align: left;
     text-decoration: underline;
-    font-size: 0.9em;
-    margin: 20px 15px 5px;
+    margin-bottom: 5px;
 }
+/* #endregion */
 
+/* ------------------------------------------------------------------------- */
 
-.projects-descr {
-    display: grid;
-    grid-column-start: 1;
-    grid-column-end: 10;
-    grid-row: 2/2;
-    text-align: left;
-    font-size: 0.9em;
-    margin: 0px 15px 5px;
-}
-
-
-.workxp-grid-single-small {
-    justify-content: space-between;
-    color: #ffffff !important;
-    font-size: 1em !important;
-    margin: inherit;
-    font-style: normal !important;
-    padding-inline-start: 0px;
-}
-
-
-
-*, *:before, *:after {
-    box-sizing: border-box;
-  }
-.education-grade {
-    grid-column-start: 10;
-    grid-column-end: 12;
-    grid-row: 2/2;
-    text-align: right;
-    font-size: 0.9em;
-    margin: 0px 15px 5px;
-    font-style: italic;
-}
-
+/* #region list and sublist properties for position description */
 li {
-    padding-bottom: 5px;
     padding-right: 1px;
+    padding-bottom: 5px;
 }
 
+ul {
+    padding-inline-start: 15px;
+    margin: 5px 15px;
+    text-align: left;
+}
 
 ul.description {
-    margin: 5px 15px;
     list-style-type: disc;
-    text-align: left;
-    padding-inline-start: 15px;
 }
 
 ul.description-sub {
-    list-style-type: none;
-    margin: 0px 15px;
-    text-align: left;
     padding-inline-start: 30px;
+    margin: 0 15px;
+    list-style-type: none;
 }
 
+/* hyphen is not available, doing workaround */
 ul.description-sub>li {
-    text-indent: -12px;
+    text-indent: -15px;
 }
 
 ul.description-sub>li:before {
     content: "- ";
     text-indent: -10px;
 }
+/* #endregion */
 
-ul[id~= "interests"] {
-    margin: 5px 15px;
-    text-align: left;
-    color: #ffffff;
-    font-size: 0.9em;
-    padding-inline-start: 15px;
-}
+/* ------------------------------------------------------------------------- */
 
-
-
-.first-banner {
+/* #region list properties for skills on side banner */
+ul.skilllist {
+    padding-inline-end: 15px;
     display: flex;
-    height: 80%;
-    width: 28%;
-    padding: 0px;
-    flex-direction: column;
-    background-color: #707070 !important;
-}
-
-ul.skilllist:not(#interests) {
-    list-style-type: none;
-    margin: 15px 1px 5px 5px;
-    font-size: 12px;
-    text-align: left;
-    justify-content:space-between;
-    display: flex;
-    align-content: flex-start;
     flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 15px 1px 5px 5px;
     color: #ffffff;
-    
-    padding-inline-start: 15px;
-    padding-inline-end: 15px;
-}
-
-
-ul.skilllist[id~= "interests"]  {
     list-style-type: none;
-    margin: 8px;
-    color: #ffffff;
-    padding-inline-start: 15px;
-    padding-inline-end: 15px;
 }
 
-
-ul.skilllist>li:not(:last-child):after{
+ul.skilllist>li:not(:last-child):after {
     content: " •";
     margin: 1px;
 }
 
-#skillblock {
-    background-color: rgb(239, 239, 239, 0.75) !important;
-    border-radius: 10px;
-    height: 20px;
-    margin: 0px 15px;
+/* interests are array list, but should be formatted differently */
+ul[id~="interests"] {
+    font-size: 0.9em;
+    color: #ffffff;
+}
+/* #endregion */
+
+/* ------------------------------------------------------------------------- */
+
+/* #region skill level bar properties */
+/* grey base bar */
+.skillblock {
     display: flex;
+    height: 20px;
+    margin: 0 15px;
+    background-color: rgb(239, 239, 239, 0.75);
+    border-radius: 10px;
 }
 
-
-#skillblock-actual {
-    background-color: #1A4A5D !important;
-    border-radius: 10px;
-    height: 20px;
-    color:#ffffff;
-    font-size: 10px;
-    text-align: center;
-    align-items: center;
+/* colored bar representing actual skill level */
+.skillblock-actual {
+    display: flex;
     justify-content: center;
-    display: flex;
-}
-
-.second-banner {
-    display: flex;
-    height: 100%;
-    width: 28%;
-    flex-direction: column;
-    background-color: #707070 !important;
-}
-
-
-personaldetail {
-    display: inherit;
-    border-radius: 5px;
-    justify-content: space-around;
     align-items: center;
-    flex: auto;
-    color: #ffffff !important;
-    background-color: #1A4A5D !important;
-}
-
-highl {
-    font-weight: bold;
-    color: #1A4A5D;
-}
-
-h1 {
-    font-size: 19px;
-    text-align: left;
-    display: inline;
-    color: #595959 !important;
-}
-pre {
-    margin-left: 15px;
-}
-
-h1::after {
-    content: "'";
-}
-
-h2 {
-    margin: 20px 15px 5px;
-    font-size: 16px;
-    text-align: left;
-    color: #1A4A5D !important;
-    font-weight: bold;
-}
-
-h2 span {
-    padding: 1px;
-    background-color: rgba(190, 190, 190, 0.75);
-}
-
-
-h5 {
-    font-weight: 500;
-    font-size: 12px;
-    margin: 10px;
-    color: inherit;
+    height: 20px;
+    background-color: #1A4A5D;
+    border-radius: 10px;
+    font-size: 10px;
+    color: #ffffff;
     text-align: center;
-    text-decoration-line: underline;
 }
+/* #endregion */
 
-h6 {
-    margin: 2px 5px;
-    font-size: 1em;
-    text-align: right;
-    display:flow-root;
-    color: #efefef !important;
-}
-h6::before {
-    content: counter(rownum);
-    counter-increment: rownum 1;
-}
-page[size="A4"] {
+/* ------------------------------------------------------------------------- */
+
+/* #region lets it look like DIN A4 */
+page {
     background: #ffffff;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
     width: 21cm;
     height: 29.7cm;
     counter-reset: rownum;
-    display: block;
-    margin: 0cm auto;
     page-break-after: always;
-    margin-bottom: 0.5cm;
-    box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
-
 }
 
 @media print {
-
     body,
-    page[size="A4"]  {
-        margin: 0px;
-        box-shadow: 0px;
+    page {
+        box-shadow: none;
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
+        margin: 0;
+        background: #ffffff;
     }
 }
+/* #endregion */

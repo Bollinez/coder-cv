@@ -1,3 +1,13 @@
+/**
+* @file the script contains all json-type details for the CV and 
+        includes functions to create html id selectors for each key value pair in json, 
+        as well as functions to perform various style changes to keywords in an automated way
+* @author Sydney Hillen <sydney.hillen@outlook.com>
+* @version v1.1
+*/
+
+
+/**@constant {json} */
 const cv_obj = {
   summarybanner: {
     name: "Sydney Hillen",
@@ -8,10 +18,14 @@ const cv_obj = {
       "join a team of critical thinkers, who are equally passionate. " 
   },
   personalscontainer: {
-    "address-string": "Obere Belchenstr 17, 5012 Schoenenwerd",
-    mail: "sydney.hillen@outlook.com",
-    mobile: "+41 76 565 3714",
-    linkedin: "/sydney-hillen/",
+    address: "address: Obere Belchenstr 17, 5012 Schoenenwerd",
+    mail: "mail: sydney.hillen@outlook.com",
+    mobile: "mobile: +41 76 565 3714",
+    nationality: "nationality: German",
+    linkedin: "linkedin: /sydney-hillen",
+    github: "github: /Bollinez",
+    birth: "birth: 1990-07-29",
+    status: "status: married",
   },
   workxp: [
     {
@@ -150,9 +164,9 @@ const cv_obj = {
     },
   ],
   skills: {
-    verygood: ["PL/SQL", "R", "Markdown", "git", "Python", "VBA", "JSON"],
-    good: ["F#", "SAS", "Anaconda", "HTML", "CSS", "JavaScript"],
-    fundamentals: ["Java", "Azure", "C#", "Docker", "Angular", "Tableau"],
+    verygood: ["Python", "SQL", "git", "R", "JSON", "Markdown", "VBA"],
+    good: ["JavaScript", "HTML", "CSS", "Angular", "C#", "F#", "SAS"],
+    fundamentals: ["Java", "Docker", "Tableau", "Azure", "PowerShell", "Maven"],
   },
   languages: {
     native: "German",
@@ -207,13 +221,16 @@ const cv_obj = {
     "bringing rather legacy-focussing areas closer to BI tools and process automation techniques."},
     { area: "CS Valuation in Resolution Data Sourcing (2019)",
     topics: "Proof of Concept for the implementation of big data tools (Hadoop) to prepare for " +
-    "more requent reporting cycles and daily batch runs. "},
+    "shorter reporting cycles and daily batch runs. "},
     { area: "CS BMR Innovation Circle (2018)",
     topics: "Co-Project lead for Python- & R-based process automation."}]
 };
 
+// initialize html string and concat it later on
 var listItem = "";
 var listHTML = "";
+
+// create array containing items that should not be considered when forming html string later on
 var sideArrays = cv_obj.interests.concat(
   cv_obj.projects_clubs,
   cv_obj.education[0].topics,
@@ -226,6 +243,7 @@ cv_obj.skills.fundamentals.concat(
 cv_obj.skills.good,
 cv_obj.skills.verygood);
 
+// create list with keywords that should be highlighted in cv
 var keyWordCV = [
   "F#",
   "CI/CD",
@@ -242,6 +260,13 @@ var keyWordCV = [
   "SQL",
 ];
 
+
+/**
+* containsAny checks whether any string is found in a list of substrings
+* @param {string} str - string to be checked for in list
+* @param {Array} substrings - list of strings to search in
+* @return {null | Array} returns either null or the list of strings leading to a match
+*/
 function containsAny(str, substrings) {
   var matchesFound = [];
   for (var i = 0; i != substrings.length; i++) {
@@ -254,6 +279,11 @@ function containsAny(str, substrings) {
   else return null;
 }
 
+/**
+* iterateList iterate list and pass to createHTMLList function
+* @param {Object} object - key value pair from json file as an object
+* @param {string} arrayname - placeholder (optional)
+*/
 function iterateList(object, arrayname) {
   let objarr = object;
   listHTML = "";
@@ -262,6 +292,10 @@ function iterateList(object, arrayname) {
   listHTML += listItem;
 }
 
+/**
+* createHTMLList creates the html string of list items
+* @param {string} value - string to be concat to html string
+*/
 function createHTMLList(value) {
   var highlightWords = containsAny(value, keyWordCV);
   var listItemSingle = "<li>" + value + "</li>";
@@ -276,6 +310,12 @@ function createHTMLList(value) {
   }
 }
 
+/**
+* buildID recursively scans the json object to decide whether to create a html id selector 
+  from json key value pair or not (depending on depth of object)
+* @param {any} input - can be Array, string or object (comes from json object)
+* @return {Map} returns key-value map that can be used to pass to function creating html string
+*/
 var buildID = (input, output = {}, key = []) => {
   if (Array.isArray(input) && typeof input[0] != "string")
     input.forEach((v, i) => buildID(v, output, [...key, `${i}`]));
@@ -292,8 +332,10 @@ var buildID = (input, output = {}, key = []) => {
   return output;
 };
 
+// trigger id selector creator function and save result
 var result = buildID(cv_obj);
 
+// iterate through every map item returned by buildID function and create id selector for html use
 Object.entries(result).forEach(([key, value]) => {
   var idkey = key.toString();
   var hash = "#";
